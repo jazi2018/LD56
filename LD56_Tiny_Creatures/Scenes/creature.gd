@@ -17,7 +17,7 @@ var state := States.Neutral
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#start wander timer so wander_destination can be generated
-	wander_timer.start()
+	#wander_timer.start()
 	#TODO
 	#check if creature is in hub
 	pass
