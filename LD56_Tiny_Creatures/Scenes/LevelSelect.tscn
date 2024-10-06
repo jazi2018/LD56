@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://df1vfpf4d8vq7"]
+
+[ext_resource type="Texture2D" uid="uid://dbcqdaj3mty8q" path="res://Textures/TEMP_PLACEHOLDER_BCKGRND.jpg" id="1_3d85s"]
+
+[node name="LevelSelect" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3d85s")

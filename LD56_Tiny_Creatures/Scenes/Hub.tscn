@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://duhlxl2jgn0aa"]
+[gd_scene load_steps=17 format=3 uid="uid://duhlxl2jgn0aa"]
 
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_8lchl"]
 [ext_resource type="Texture2D" uid="uid://brsk1blfqyb7h" path="res://Textures/glass_edge_final.png" id="1_2744n"]
 [ext_resource type="Texture2D" uid="uid://dbcqdaj3mty8q" path="res://Textures/TEMP_PLACEHOLDER_BCKGRND.jpg" id="1_puoit"]
+[ext_resource type="Script" path="res://Scenes/hub.gd" id="1_unk1c"]
 [ext_resource type="Texture2D" uid="uid://cn7m6dcfegf06" path="res://Textures/glass_corner.png" id="2_5j8by"]
 [ext_resource type="Script" path="res://Scenes/menu_handler.gd" id="2_voo00"]
 [ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="2_yjwge"]
 [ext_resource type="Texture2D" uid="uid://bfm7uat4m85e8" path="res://Textures/water_dripper_with_spout.png" id="7_nkjca"]
+[ext_resource type="Script" path="res://Scenes/test.gd" id="8_yjwcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unb18"]
 size = Vector2(30, 1446)
@@ -33,6 +35,7 @@ Button/styles/pressed = SubResource("StyleBoxEmpty_6vbgf")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pn5lk"]
 
 [node name="Hub" type="Node"]
+script = ExtResource("1_unk1c")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -160,5 +163,9 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Water Dripper"]
 texture = ExtResource("7_nkjca")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("8_yjwcg")
 
 [connection signal="button_up" from="Menu/StartButton" to="Menu" method="_on_start_button_button_up"]
