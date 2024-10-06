@@ -114,7 +114,6 @@ position = Vector2(590, 423)
 lock_rotation = true
 
 [node name="Menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
