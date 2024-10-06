@@ -1,14 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhlxl2jgn0aa"]
+[gd_scene load_steps=15 format=3 uid="uid://duhlxl2jgn0aa"]
 
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_8lchl"]
+[ext_resource type="Texture2D" uid="uid://brsk1blfqyb7h" path="res://Textures/glass_edge_final.png" id="1_2744n"]
+[ext_resource type="Texture2D" uid="uid://dbcqdaj3mty8q" path="res://Textures/TEMP_PLACEHOLDER_BCKGRND.jpg" id="1_puoit"]
+[ext_resource type="Texture2D" uid="uid://cn7m6dcfegf06" path="res://Textures/glass_corner.png" id="2_5j8by"]
 [ext_resource type="Script" path="res://Scenes/menu_handler.gd" id="2_voo00"]
 [ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="2_yjwge"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqjsm"]
-size = Vector2(20, 427)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unb18"]
+size = Vector2(30, 645)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x727p"]
-size = Vector2(578, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqjsm"]
+size = Vector2(31, 460)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ap5"]
+size = Vector2(31, 429)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua4tv"]
 
@@ -27,26 +33,77 @@ Button/styles/pressed = SubResource("StyleBoxEmpty_6vbgf")
 
 [node name="Hub" type="Node"]
 
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_puoit")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1165.47, 700)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(851, 500)
+rotation = 1.5708
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+texture_repeat = 2
+position = Vector2(9, -34)
+texture = ExtResource("1_2744n")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -143, 33, 585.242)
+
+[node name="Corner" type="Sprite2D" parent="Floor"]
+position = Vector2(11, 550)
+texture = ExtResource("2_5j8by")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(25.9999, 258.5)
+shape = SubResource("RectangleShape2D_unb18")
+
 [node name="RightWall" type="StaticBody2D" parent="."]
 position = Vector2(874, 116)
 
+[node name="Wall" type="Sprite2D" parent="RightWall"]
+texture_repeat = 2
+position = Vector2(9, -34)
+texture = ExtResource("1_2744n")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -143, 33, 429)
+metadata/_edit_group_ = true
+
+[node name="Corner" type="Sprite2D" parent="RightWall"]
+position = Vector2(11, 395)
+texture = ExtResource("2_5j8by")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+metadata/_edit_group_ = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(0, 203.5)
+position = Vector2(26.5, 196)
 shape = SubResource("RectangleShape2D_uqjsm")
+metadata/_edit_group_ = true
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
-position = Vector2(315, 116)
+position = Vector2(268, 82)
+
+[node name="Wall" type="Sprite2D" parent="LeftWall"]
+texture_repeat = 2
+texture = ExtResource("1_2744n")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -143, 33, 429)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(0, 203.5)
-shape = SubResource("RectangleShape2D_uqjsm")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(315, 522)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(279, 0)
-shape = SubResource("RectangleShape2D_x727p")
+position = Vector2(17.5, 214.5)
+shape = SubResource("RectangleShape2D_o4ap5")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_8lchl")]
 position = Vector2(590, 423)
