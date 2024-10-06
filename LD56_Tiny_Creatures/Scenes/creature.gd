@@ -29,11 +29,12 @@ func _physics_process(delta) -> void:
 	
 	if Input.is_action_just_released("left_click"):
 		state = States.Neutral
-		wander_timer.start()
+		if is_in_hub:
+			wander_timer.start()
 	
 	if state == States.Held:
 		apply_central_impulse(SPRING_CONSTANT * get_local_mouse_position() * delta - linear_velocity/4)
-	elif state == States.Wander:
+	elif state == States.Wander and is_in_hub:
 		var impulse_x := wander_destination.x - self.position.x
 		apply_central_force(Vector2(impulse_x, 0) * SPEED)
 	
@@ -41,7 +42,7 @@ func _physics_process(delta) -> void:
 		#print("at destination")
 		state = States.Neutral
 		self.physics_material_override.friction = 0.6
-		if wander_timer.is_stopped():
+		if wander_timer.is_stopped() and is_in_hub:
 			wander_timer.start()
 
 func generate_wander_location() -> Vector2:
