@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdjjclfnlahva"
-path="res://.godot/imported/glass_corner.png-66370830f0fd5434720d13e4ad4db993.ctex"
+uid="uid://dibisypw5lyly"
+path="res://.godot/imported/right_grass_dirt_corner_2.png-cd60f2cb8a5491b9d76faacbca1b0f8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/glass_corner.png"
-dest_files=["res://.godot/imported/glass_corner.png-66370830f0fd5434720d13e4ad4db993.ctex"]
+source_file="res://Textures/right_grass_dirt_corner_2.png"
+dest_files=["res://.godot/imported/right_grass_dirt_corner_2.png-cd60f2cb8a5491b9d76faacbca1b0f8a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdjjclfnlahva"
-path="res://.godot/imported/glass_corner.png-66370830f0fd5434720d13e4ad4db993.ctex"
+uid="uid://c7h8gtorp7d32"
+path="res://.godot/imported/grass_transition_corner.png-c488813f16c7918e29c97445544e7e3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/glass_corner.png"
-dest_files=["res://.godot/imported/glass_corner.png-66370830f0fd5434720d13e4ad4db993.ctex"]
+source_file="res://Textures/grass_transition_corner.png"
+dest_files=["res://.godot/imported/grass_transition_corner.png-c488813f16c7918e29c97445544e7e3e.ctex"]
 
 [params]
 

@@ -1,23 +1,44 @@
-[gd_scene load_steps=14 format=3 uid="uid://duhlxl2jgn0aa"]
+[gd_scene load_steps=33 format=3 uid="uid://duhlxl2jgn0aa"]
 
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_8lchl"]
-[ext_resource type="Texture2D" uid="uid://brsk1blfqyb7h" path="res://Textures/glass_edge_final.png" id="1_2744n"]
+[ext_resource type="Texture2D" uid="uid://d4c8urgmjbyed" path="res://Textures/glass_edge_final.png" id="1_2744n"]
 [ext_resource type="Texture2D" uid="uid://dbcqdaj3mty8q" path="res://Textures/TEMP_PLACEHOLDER_BCKGRND.jpg" id="1_puoit"]
 [ext_resource type="Script" path="res://Scenes/hub.gd" id="1_unk1c"]
-[ext_resource type="Texture2D" uid="uid://cn7m6dcfegf06" path="res://Textures/glass_corner.png" id="2_5j8by"]
+[ext_resource type="Texture2D" uid="uid://bdjjclfnlahva" path="res://Textures/glass_corner.png" id="2_5j8by"]
 [ext_resource type="Script" path="res://Scenes/menu_handler.gd" id="2_voo00"]
 [ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="2_yjwge"]
-[ext_resource type="Texture2D" uid="uid://bfm7uat4m85e8" path="res://Textures/water_dripper_with_spout.png" id="7_nkjca"]
-[ext_resource type="Theme" uid="uid://burq0wxpoqui0" path="res://Scenes/ButtonTheme.tres" id="8_rmb0f"]
+[ext_resource type="Texture2D" uid="uid://c7i8coiau838e" path="res://Textures/dirt_bottom_only.png" id="3_wofls"]
+[ext_resource type="Texture2D" uid="uid://dfg3kb6mjs2xy" path="res://Textures/ladder_bottom_edge.png" id="7_neeih"]
+[ext_resource type="Texture2D" uid="uid://dhba5thv80u7o" path="res://Textures/water_dripper_with_spout.png" id="7_nkjca"]
+[ext_resource type="Texture2D" uid="uid://bn360dxigklck" path="res://Textures/left_grass_dirt_transition.png" id="7_q65tf"]
+[ext_resource type="Texture2D" uid="uid://cf42k4d18f32k" path="res://Textures/skinny_ladder.png" id="8_g8yc5"]
+[ext_resource type="Texture2D" uid="uid://c7uh2rqo1yxar" path="res://Textures/left_grass.png" id="8_m4cr2"]
+[ext_resource type="Theme" path="res://Scenes/ButtonTheme.tres" id="8_rmb0f"]
+[ext_resource type="Texture2D" uid="uid://chkk7urtycyqr" path="res://Textures/right_grass.png" id="8_t2w01"]
+[ext_resource type="Texture2D" uid="uid://pohmpnf76ho3" path="res://Textures/ladder_platform_behind.png" id="9_0l1ar"]
+[ext_resource type="Texture2D" uid="uid://cmoqe4frq3gke" path="res://Textures/grass.png" id="9_86kjl"]
+[ext_resource type="Texture2D" uid="uid://vybpgfgp6p1" path="res://Textures/ladder_top_edge.png" id="9_oyypo"]
+[ext_resource type="Texture2D" uid="uid://c7orranx2w5w" path="res://Textures/dirt_and_grass_bottom.png" id="10_c1uxl"]
+[ext_resource type="Texture2D" uid="uid://bk8v7ocudwkj" path="res://Textures/blank_dirt_block.png" id="10_msq5u"]
+[ext_resource type="Texture2D" uid="uid://dibisypw5lyly" path="res://Textures/right_grass_dirt_corner_2.png" id="11_fx5dg"]
+[ext_resource type="Texture2D" uid="uid://bv838ass7l85t" path="res://Textures/dirt_interior_corner.png" id="11_hht4p"]
+[ext_resource type="Texture2D" uid="uid://bgxdua30do2oy" path="res://Textures/dirt_corner.png" id="12_ivtsw"]
+[ext_resource type="Texture2D" uid="uid://c7h8gtorp7d32" path="res://Textures/grass_transition_corner.png" id="13_wlnfa"]
+[ext_resource type="Texture2D" uid="uid://dqc06anfopqg8" path="res://Textures/grass_transition.png" id="14_bsy3m"]
+[ext_resource type="Texture2D" uid="uid://c8m5htqtltg7f" path="res://Textures/cat_tree_pillar.png" id="14_mfpp4"]
+[ext_resource type="Texture2D" uid="uid://mp4oxkm7irho" path="res://Textures/dirt_top.png" id="15_gpgjc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unb18"]
-size = Vector2(30, 1446)
+size = Vector2(216.999, 1852)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqjsm"]
-size = Vector2(210, 961)
+size = Vector2(210, 1036.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ap5"]
-size = Vector2(231, 959)
+size = Vector2(231, 1069.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swyh7"]
+size = Vector2(115, 309)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pn5lk"]
 
@@ -25,6 +46,7 @@ size = Vector2(231, 959)
 script = ExtResource("1_unk1c")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 texture_repeat = 2
 scale = Vector2(2.85494, 3.02143)
 texture = ExtResource("1_puoit")
@@ -32,17 +54,357 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1165.47, 700)
 
+[node name="Hub Environment Elements" type="StaticBody2D" parent="."]
+position = Vector2(250, 1072)
+
+[node name="Dirt" type="Sprite2D" parent="Hub Environment Elements"]
+texture_repeat = 2
+position = Vector2(959, 33)
+texture = ExtResource("3_wofls")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 64)
+
+[node name="DirtInteriorCorner10" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-865, -255.998)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+flip_v = true
+
+[node name="Dirt" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+texture_repeat = 2
+position = Vector2(-703, -0.998474)
+texture = ExtResource("10_msq5u")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 64)
+
+[node name="Dirt2" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+texture_repeat = 2
+position = Vector2(-1055, -256.998)
+texture = ExtResource("10_msq5u")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 64)
+
+[node name="Dirt3" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+texture_repeat = 2
+position = Vector2(-959, -33.998)
+texture = ExtResource("10_msq5u")
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 128)
+
+[node name="Dirt4" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+texture_repeat = 2
+position = Vector2(-991, -128.998)
+texture = ExtResource("10_msq5u")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 64)
+
+[node name="Dirt5" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+texture_repeat = 2
+position = Vector2(-1023, -192.998)
+texture = ExtResource("10_msq5u")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 64)
+
+[node name="DirtInteriorCorner" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-735, -64.9984)
+rotation = 3.14159
+texture = ExtResource("11_hht4p")
+
+[node name="DirtInteriorCorner" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtInteriorCorner"]
+position = Vector2(-1343, -64.9999)
+rotation = 3.14159
+texture = ExtResource("11_hht4p")
+flip_v = true
+
+[node name="DirtInteriorCorner2" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-800, -128.998)
+texture = ExtResource("11_hht4p")
+flip_h = true
+flip_v = true
+
+[node name="DirtInteriorCorner3" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-864, -192.998)
+rotation = 3.14159
+texture = ExtResource("11_hht4p")
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(609, -62.0012)
+rotation = 1.57079
+texture = ExtResource("3_wofls")
+region_enabled = true
+region_rect = Rect2(0, 0, 62.6142, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom"]
+position = Vector2(-254, -3)
+rotation = -1.5708
+texture = ExtResource("8_m4cr2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom3"]
+position = Vector2(-131, 1.99987)
+texture = ExtResource("8_t2w01")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom3/DirtBottom3"]
+position = Vector2(-288, 1)
+texture = ExtResource("9_86kjl")
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom"]
+position = Vector2(-127, -2)
+texture = ExtResource("3_wofls")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2"]
+position = Vector2(-63, -1)
+rotation = 4.71239
+texture = ExtResource("7_q65tf")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom"]
+position = Vector2(-131, 1)
+texture = ExtResource("11_fx5dg")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom"]
+position = Vector2(-191, -5.7331e-05)
+texture = ExtResource("10_c1uxl")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom"]
+position = Vector2(-192, 0.999943)
+texture = ExtResource("13_wlnfa")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom"]
+position = Vector2(0, 64.0001)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom"]
+position = Vector2(-63, 64.0001)
+texture = ExtResource("11_hht4p")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
+position = Vector2(0, 64.0001)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom5" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
+position = Vector2(-64, 64)
+texture = ExtResource("12_ivtsw")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5"]
+position = Vector2(-384, -1.99998)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5/DirtBottom"]
+position = Vector2(-4.76837e-07, -63)
+texture = ExtResource("11_hht4p")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5"]
+position = Vector2(-447, -1.99997)
+texture = ExtResource("12_ivtsw")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5/DirtBottom2"]
+position = Vector2(-61, -63)
+texture = ExtResource("12_ivtsw")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5/DirtBottom2/DirtBottom2"]
+position = Vector2(-2, -64)
+rotation = 1.5708
+texture = ExtResource("12_ivtsw")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5/DirtBottom2/DirtBottom2/DirtBottom2"]
+position = Vector2(-158, -64)
+rotation = 1.5708
+texture = ExtResource("14_mfpp4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 256)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
+position = Vector2(-64, 3.8147e-06)
+texture = ExtResource("11_hht4p")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom9" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
+position = Vector2(-511, -2)
+texture = ExtResource("11_hht4p")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom6" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
+position = Vector2(-128, -64)
+texture = ExtResource("14_bsy3m")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6"]
+position = Vector2(-3.8147e-06, -63)
+texture = ExtResource("8_m4cr2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6"]
+position = Vector2(-224, -0.99999)
+texture = ExtResource("3_wofls")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 64)
+
+[node name="DirtBottom4" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
+position = Vector2(-7.62939e-06, -64)
+texture = ExtResource("15_gpgjc")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom4"]
+position = Vector2(-64, 0)
+texture = ExtResource("15_gpgjc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom4" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom4"]
+position = Vector2(-128, 63)
+texture = ExtResource("3_wofls")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom4/DirtBottom4"]
+position = Vector2(-160, 5.17418e-06)
+texture = ExtResource("3_wofls")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 64)
+
+[node name="DirtBottom" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom"]
+position = Vector2(-63, -0.999997)
+texture = ExtResource("3_wofls")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtInteriorCorner4" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-928, -256.998)
+texture = ExtResource("11_hht4p")
+flip_h = true
+flip_v = true
+
+[node name="DirtInteriorCorner5" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-607, -0.998718)
+texture = ExtResource("11_hht4p")
+flip_h = true
+flip_v = true
+
+[node name="DirtInteriorCorner6" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-737, -127.998)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+flip_v = true
+
+[node name="DirtInteriorCorner7" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-609, -64.9987)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+flip_v = true
+
+[node name="DirtInteriorCorner8" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+z_index = 1
+position = Vector2(-801, -191.998)
+texture = ExtResource("12_ivtsw")
+flip_h = true
+flip_v = true
+
+[node name="DirtInteriorCorner9" type="Sprite2D" parent="Hub Environment Elements/Dirt"]
+position = Vector2(-671, -63.9985)
+texture = ExtResource("3_wofls")
+flip_h = true
+flip_v = true
+
+[node name="Ladder" type="Sprite2D" parent="Hub Environment Elements"]
+position = Vector2(1505, -30)
+texture = ExtResource("7_neeih")
+
+[node name="Ladder2" type="Sprite2D" parent="Hub Environment Elements/Ladder"]
+texture_repeat = 2
+position = Vector2(0, -800)
+texture = ExtResource("8_g8yc5")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 128)
+
+[node name="Ladder2" type="Sprite2D" parent="Hub Environment Elements/Ladder/Ladder2"]
+texture_repeat = 2
+position = Vector2(0, -96)
+texture = ExtResource("9_oyypo")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Ladder3" type="Sprite2D" parent="Hub Environment Elements/Ladder/Ladder2"]
+texture_repeat = 2
+position = Vector2(0, -96)
+texture = ExtResource("9_oyypo")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="LadderWithPlatformBehind" type="Sprite2D" parent="Hub Environment Elements/Ladder"]
+texture_repeat = 2
+position = Vector2(0, -704)
+texture = ExtResource("9_0l1ar")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Ladder" type="Sprite2D" parent="Hub Environment Elements/Ladder"]
+texture_repeat = 2
+position = Vector2(0, -352)
+texture = ExtResource("8_g8yc5")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 640)
+
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(851, 500)
+position = Vector2(608, 620)
 rotation = 1.5708
 
 [node name="Floor" type="Sprite2D" parent="Floor"]
 texture_repeat = 2
-position = Vector2(513, -842.699)
+position = Vector2(514.995, -1243)
 texture = ExtResource("1_2744n")
 centered = false
+flip_h = true
 region_enabled = true
-region_rect = Rect2(31, -952.5, 33, 1394.74)
+region_rect = Rect2(31, -1088.95, 33, 1794)
 
 [node name="Corner" type="Sprite2D" parent="Floor"]
 position = Vector2(514.002, 550.998)
@@ -53,23 +415,33 @@ region_enabled = true
 region_rect = Rect2(30, 0, 34, 33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(533, -144.002)
+position = Vector2(623.499, -347.002)
 shape = SubResource("RectangleShape2D_unb18")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(1683, 117)
+position = Vector2(1440, 237)
 
 [node name="Wall" type="Sprite2D" parent="RightWall"]
 texture_repeat = 2
-position = Vector2(9, -34)
+position = Vector2(409, -142)
 texture = ExtResource("1_2744n")
 centered = false
 region_enabled = true
-region_rect = Rect2(31, -143, 33, 934.237)
+region_rect = Rect2(31, -325.808, 33, 1040)
 metadata/_edit_group_ = true
 
 [node name="Corner" type="Sprite2D" parent="RightWall"]
-position = Vector2(10, 898)
+position = Vector2(411, 898)
+texture = ExtResource("2_5j8by")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+metadata/_edit_group_ = true
+
+[node name="Corner" type="Sprite2D" parent="RightWall/Corner"]
+position = Vector2(0, -1040)
+rotation = 4.71239
 texture = ExtResource("2_5j8by")
 centered = false
 flip_h = true
@@ -78,28 +450,40 @@ region_rect = Rect2(30, 0, 34, 33)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(116, 446.5)
+position = Vector2(517, 412.25)
 shape = SubResource("RectangleShape2D_uqjsm")
 metadata/_edit_group_ = true
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
-position = Vector2(268, 82)
+position = Vector2(25, 202)
 
 [node name="Wall" type="Sprite2D" parent="LeftWall"]
 texture_repeat = 2
+position = Vector2(-1, -108)
 texture = ExtResource("1_2744n")
 centered = false
 region_enabled = true
-region_rect = Rect2(31, -143, 33, 936.396)
+region_rect = Rect2(31, -143, 33, 1040)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-82.5, 479.5)
+position = Vector2(-84, 424.75)
 shape = SubResource("RectangleShape2D_o4ap5")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_8lchl")]
-position = Vector2(590, 423)
+position = Vector2(347, 543)
 lock_rotation = true
+
+[node name="Water Dripper" type="StaticBody2D" parent="."]
+position = Vector2(127, 354)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Water Dripper"]
+texture = ExtResource("7_nkjca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water Dripper"]
+position = Vector2(-6.5, -4.5)
+shape = SubResource("RectangleShape2D_swyh7")
 
 [node name="Menu" type="Control" parent="."]
 visible = false
@@ -143,12 +527,5 @@ theme_override_fonts/font = ExtResource("2_yjwge")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pn5lk")
 text = "Play"
-
-[node name="Water Dripper" type="StaticBody2D" parent="."]
-position = Vector2(370, 234)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Water Dripper"]
-texture = ExtResource("7_nkjca")
 
 [connection signal="button_up" from="Menu/StartButton" to="Menu" method="_on_start_button_button_up"]
