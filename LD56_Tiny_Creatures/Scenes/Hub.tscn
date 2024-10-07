@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://duhlxl2jgn0aa"]
+[gd_scene load_steps=37 format=3 uid="uid://duhlxl2jgn0aa"]
 
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_8lchl"]
 [ext_resource type="Texture2D" uid="uid://d4c8urgmjbyed" path="res://Textures/glass_edge_final.png" id="1_2744n"]
@@ -27,6 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://dqc06anfopqg8" path="res://Textures/grass_transition.png" id="14_bsy3m"]
 [ext_resource type="Texture2D" uid="uid://c8m5htqtltg7f" path="res://Textures/cat_tree_pillar.png" id="14_mfpp4"]
 [ext_resource type="Texture2D" uid="uid://mp4oxkm7irho" path="res://Textures/dirt_top.png" id="15_gpgjc"]
+[ext_resource type="Texture2D" uid="uid://cel2q2ddq242t" path="res://Textures/sideways_platform.png" id="16_cfva5"]
+[ext_resource type="Texture2D" uid="uid://c6s8xrxt7a5bc" path="res://Textures/sideways platform with corner.png" id="17_uvgxe"]
+[ext_resource type="Texture2D" uid="uid://cgnbmilsam3x7" path="res://Textures/bridge.png" id="18_cebwc"]
+[ext_resource type="Texture2D" uid="uid://ckxcmaj5pq4n6" path="res://Textures/bridge_rope.png" id="19_8akcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unb18"]
 size = Vector2(216.999, 1852)
@@ -253,6 +257,18 @@ texture = ExtResource("14_mfpp4")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 256)
 
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5/DirtBottom2/DirtBottom2/DirtBottom2/DirtBottom2"]
+position = Vector2(-386.001, 25.0055)
+texture = ExtResource("14_mfpp4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 210)
+
+[node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom5/DirtBottom2/DirtBottom2/DirtBottom2/DirtBottom2/DirtBottom2"]
+position = Vector2(63.0005, 238)
+texture = ExtResource("14_mfpp4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 170)
+
 [node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
 position = Vector2(-64, 3.8147e-06)
 texture = ExtResource("11_hht4p")
@@ -272,7 +288,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="DirtBottom2" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6"]
-position = Vector2(-3.8147e-06, -63)
+position = Vector2(2, -63)
 texture = ExtResource("8_m4cr2")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
@@ -283,6 +299,62 @@ texture = ExtResource("3_wofls")
 flip_v = true
 region_enabled = true
 region_rect = Rect2(0, 0, 384, 64)
+
+[node name="DirtBottom4" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6"]
+position = Vector2(-218.997, -319.002)
+texture = ExtResource("16_cfva5")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 64)
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6/DirtBottom4"]
+position = Vector2(-223, -0.00237262)
+texture = ExtResource("17_uvgxe")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom4" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6/DirtBottom4"]
+position = Vector2(320.001, -197.998)
+texture = ExtResource("16_cfva5")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 64)
+metadata/_edit_group_ = true
+
+[node name="DirtBottom3" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6/DirtBottom4/DirtBottom4"]
+position = Vector2(-223, -0.00237262)
+texture = ExtResource("17_uvgxe")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="DirtBottom6" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6/DirtBottom4"]
+position = Vector2(543.001, -197.998)
+rotation = 3.14159
+texture = ExtResource("17_uvgxe")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+metadata/_edit_group_ = true
+
+[node name="DirtBottom5" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6/DirtBottom4"]
+position = Vector2(669.001, -197.998)
+texture = ExtResource("18_cebwc")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 64)
+
+[node name="DirtBottom7" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6/DirtBottom4"]
+position = Vector2(672, -260.999)
+texture = ExtResource("19_8akcx")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 64)
+
+[node name="DirtBottom6" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2/DirtBottom6"]
+position = Vector2(4.00293, -319.003)
+rotation = 3.14159
+texture = ExtResource("17_uvgxe")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="DirtBottom4" type="Sprite2D" parent="Hub Environment Elements/Dirt/DirtBottom/DirtBottom2/DirtBottom/DirtBottom/DirtBottom/DirtBottom/DirtBottom2"]
 position = Vector2(-7.62939e-06, -64)
@@ -386,6 +458,21 @@ texture = ExtResource("9_0l1ar")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
 
+[node name="LadderWithPlatformBehind" type="Sprite2D" parent="Hub Environment Elements/Ladder/LadderWithPlatformBehind"]
+texture_repeat = 2
+position = Vector2(-64, 0)
+texture = ExtResource("17_uvgxe")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="LadderWithPlatformBehind" type="Sprite2D" parent="Hub Environment Elements/Ladder/LadderWithPlatformBehind/LadderWithPlatformBehind"]
+texture_repeat = 2
+position = Vector2(128, 0)
+rotation = 3.14159
+texture = ExtResource("17_uvgxe")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
 [node name="Ladder" type="Sprite2D" parent="Hub Environment Elements/Ladder"]
 texture_repeat = 2
 position = Vector2(0, -352)
@@ -419,11 +506,11 @@ position = Vector2(623.499, -347.002)
 shape = SubResource("RectangleShape2D_unb18")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(1440, 237)
+position = Vector2(1891, 231)
 
 [node name="Wall" type="Sprite2D" parent="RightWall"]
 texture_repeat = 2
-position = Vector2(409, -142)
+position = Vector2(-42, -138)
 texture = ExtResource("1_2744n")
 centered = false
 region_enabled = true
@@ -431,7 +518,7 @@ region_rect = Rect2(31, -325.808, 33, 1040)
 metadata/_edit_group_ = true
 
 [node name="Corner" type="Sprite2D" parent="RightWall"]
-position = Vector2(411, 898)
+position = Vector2(-40, 902)
 texture = ExtResource("2_5j8by")
 centered = false
 flip_h = true
@@ -450,7 +537,7 @@ region_rect = Rect2(30, 0, 34, 33)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(517, 412.25)
+position = Vector2(66, 416.25)
 shape = SubResource("RectangleShape2D_uqjsm")
 metadata/_edit_group_ = true
 
@@ -474,7 +561,7 @@ shape = SubResource("RectangleShape2D_o4ap5")
 position = Vector2(590, 423)
 
 [node name="Water Dripper" type="StaticBody2D" parent="."]
-position = Vector2(127, 354)
+position = Vector2(121, 263)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Water Dripper"]
