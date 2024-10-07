@@ -10,10 +10,11 @@ bounce = 0.3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5xxl"]
 size = Vector2(42, 41)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Creature" type="RigidBody2D"]
 collision_layer = 2
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_p80ng")
+lock_rotation = true
 script = ExtResource("1_ajt1m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
