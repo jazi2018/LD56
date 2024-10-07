@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq8dxb2y7dhyq"]
+
+[ext_resource type="Texture2D" uid="uid://c52si4wunscsd" path="res://Textures/bucket_chain_link.png" id="1_dcenl"]
+[ext_resource type="Texture2D" uid="uid://cyvxcio7gjymf" path="res://Textures/bucket_side.png" id="2_fon72"]
+[ext_resource type="Texture2D" uid="uid://cc33md61bjknv" path="res://Textures/bucket_net_top.png" id="3_kqtim"]
+[ext_resource type="Texture2D" uid="uid://dgrlfbfq60aw0" path="res://Textures/bucket_bottom.png" id="4_uaen8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqcqx"]
+size = Vector2(6, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hor"]
+size = Vector2(128, 6)
+
+[node name="Bucket" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-67, 33)
+shape = SubResource("RectangleShape2D_rqcqx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(67, 33)
+shape = SubResource("RectangleShape2D_rqcqx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 131)
+shape = SubResource("RectangleShape2D_w6hor")
+
+[node name="BucketMesh" type="Sprite2D" parent="."]
+texture = ExtResource("1_dcenl")
+centered = false
+
+[node name="BucketMesh3" type="Sprite2D" parent="."]
+position = Vector2(0, 64)
+texture = ExtResource("1_dcenl")
+centered = false
+
+[node name="BucketMesh4" type="Sprite2D" parent="."]
+position = Vector2(-64, 64)
+texture = ExtResource("1_dcenl")
+centered = false
+
+[node name="BucketMesh2" type="Sprite2D" parent="."]
+position = Vector2(-64, 0)
+texture = ExtResource("1_dcenl")
+centered = false
+
+[node name="BucketSide2" type="Sprite2D" parent="."]
+position = Vector2(-38, 96)
+texture = ExtResource("2_fon72")
+
+[node name="BucketSide3" type="Sprite2D" parent="."]
+position = Vector2(-38, -30)
+texture = ExtResource("2_fon72")
+
+[node name="BucketSide4" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+texture = ExtResource("2_fon72")
+
+[node name="BucketSide5" type="Sprite2D" parent="."]
+position = Vector2(96, -30)
+texture = ExtResource("2_fon72")
+
+[node name="BucketSide6" type="Sprite2D" parent="."]
+position = Vector2(96, 32)
+texture = ExtResource("2_fon72")
+
+[node name="BucketSide" type="Sprite2D" parent="."]
+position = Vector2(-38, 32)
+texture = ExtResource("2_fon72")
+
+[node name="BucketTop2" type="Sprite2D" parent="."]
+position = Vector2(32, -32)
+texture = ExtResource("3_kqtim")
+
+[node name="BucketTop" type="Sprite2D" parent="."]
+position = Vector2(-32, -32)
+texture = ExtResource("3_kqtim")
+
+[node name="BucketBottom" type="Sprite2D" parent="."]
+position = Vector2(-32, 102)
+texture = ExtResource("4_uaen8")
+
+[node name="BucketBottom2" type="Sprite2D" parent="."]
+position = Vector2(32, 102)
+texture = ExtResource("4_uaen8")
