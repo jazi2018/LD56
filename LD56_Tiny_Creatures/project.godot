@@ -14,8 +14,6 @@ config/name="LD56_Tiny_Creatures"
 run/main_scene="res://Scenes/Level1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-"<<<<<<<HEAD[display]window/size/viewport_width"=1920
-window/size/viewport_height=1080
 
 [autoload]
 
@@ -25,6 +23,9 @@ Events="*res://Global Autoloads/Events.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1200
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
