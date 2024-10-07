@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://duhlxl2jgn0aa"]
+[gd_scene load_steps=14 format=3 uid="uid://duhlxl2jgn0aa"]
 
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_8lchl"]
 [ext_resource type="Texture2D" uid="uid://brsk1blfqyb7h" path="res://Textures/glass_edge_final.png" id="1_2744n"]
 [ext_resource type="Texture2D" uid="uid://dbcqdaj3mty8q" path="res://Textures/TEMP_PLACEHOLDER_BCKGRND.jpg" id="1_puoit"]
+[ext_resource type="Script" path="res://Scenes/hub.gd" id="1_unk1c"]
 [ext_resource type="Texture2D" uid="uid://cn7m6dcfegf06" path="res://Textures/glass_corner.png" id="2_5j8by"]
 [ext_resource type="Script" path="res://Scenes/menu_handler.gd" id="2_voo00"]
 [ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="2_yjwge"]
 [ext_resource type="Texture2D" uid="uid://bfm7uat4m85e8" path="res://Textures/water_dripper_with_spout.png" id="7_nkjca"]
+[ext_resource type="Theme" uid="uid://burq0wxpoqui0" path="res://Scenes/ButtonTheme.tres" id="8_rmb0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unb18"]
 size = Vector2(30, 1446)
@@ -17,22 +19,10 @@ size = Vector2(210, 961)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ap5"]
 size = Vector2(231, 959)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua4tv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyqdi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vbgf"]
-
-[sub_resource type="Theme" id="Theme_hgwxx"]
-Button/colors/font_hover_color = Color(0.43287, 0.935739, 0.967023, 1)
-Button/colors/font_pressed_color = Color(0.122071, 0.634953, 0.663419, 1)
-Button/styles/hover = SubResource("StyleBoxEmpty_ua4tv")
-Button/styles/normal = SubResource("StyleBoxEmpty_fyqdi")
-Button/styles/pressed = SubResource("StyleBoxEmpty_6vbgf")
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pn5lk"]
 
 [node name="Hub" type="Node"]
+script = ExtResource("1_unk1c")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -148,7 +138,7 @@ offset_right = 63.0
 offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_hgwxx")
+theme = ExtResource("8_rmb0f")
 theme_override_fonts/font = ExtResource("2_yjwge")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pn5lk")

@@ -23,6 +23,9 @@ window/size/viewport_height=1080
 [dotnet]
 
 project/assembly_name="LD56_Tiny_Creatures"
+[autoload]
+
+Events="*res://Global Autoloads/Events.gd"
 
 [input]
 
