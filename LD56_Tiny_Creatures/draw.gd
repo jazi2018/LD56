@@ -8,10 +8,15 @@ var color = "#E6EEEF"
 var grid = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	#prevent clearing of viewport for drawing purposes
 	RenderingServer.viewport_set_clear_mode(get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_CLEAR_NEVER)	
+	
+	#set up buttons and their connection to respective function
 	$Button.pressed.connect(self._on_button_pressed1)
 	$save_button.pressed.connect(self._on_button_pressed)
 
+#function to swap between color and eraser
 var c = 0
 func _on_button_pressed1():
 	if c % 2 == 0:
@@ -19,7 +24,8 @@ func _on_button_pressed1():
 	else:
 		color = "#E6EEEF"
 	c+=1
-	
+
+#save button logic 
 func _on_button_pressed():
 	print('Saving image...')
 	var capture = get_viewport().get_texture()
