@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://duhlxl2jgn0aa"]
+[gd_scene load_steps=14 format=3 uid="uid://duhlxl2jgn0aa"]
 
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_8lchl"]
 [ext_resource type="Texture2D" uid="uid://brsk1blfqyb7h" path="res://Textures/glass_edge_final.png" id="1_2744n"]
@@ -7,12 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cn7m6dcfegf06" path="res://Textures/glass_corner.png" id="2_5j8by"]
 [ext_resource type="Script" path="res://Scenes/menu_handler.gd" id="2_voo00"]
 [ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="2_yjwge"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bfm7uat4m85e8" path="res://Textures/water_dripper_with_spout.png" id="7_nkjca"]
-[ext_resource type="Script" path="res://Scenes/test.gd" id="8_yjwcg"]
-=======
 [ext_resource type="Theme" uid="uid://burq0wxpoqui0" path="res://Scenes/ButtonTheme.tres" id="8_rmb0f"]
->>>>>>> 1ec6f00 (Added level swapping functionality)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unb18"]
 size = Vector2(30, 1446)
@@ -46,17 +42,10 @@ position = Vector2(513, -842.699)
 texture = ExtResource("1_2744n")
 centered = false
 region_enabled = true
-<<<<<<< HEAD
 region_rect = Rect2(31, -952.5, 33, 1394.74)
 
 [node name="Corner" type="Sprite2D" parent="Floor"]
 position = Vector2(514.002, 550.998)
-=======
-region_rect = Rect2(31, -966.373, 33, 1408.61)
-
-[node name="Corner" type="Sprite2D" parent="Floor"]
-position = Vector2(515.002, 549.998)
->>>>>>> 1ec6f00 (Added level swapping functionality)
 texture = ExtResource("2_5j8by")
 centered = false
 flip_h = true
@@ -161,9 +150,5 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Water Dripper"]
 texture = ExtResource("7_nkjca")
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
-script = ExtResource("8_yjwcg")
 
 [connection signal="button_up" from="Menu/StartButton" to="Menu" method="_on_start_button_button_up"]
