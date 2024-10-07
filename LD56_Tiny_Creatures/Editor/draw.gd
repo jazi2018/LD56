@@ -6,6 +6,8 @@ var color = "#E6EEEF"
 var grid = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#resize viewport
+	get_window().content_scale_size = Vector2i(96, 64)
 	#prevent clearing of viewport for drawing purposes
 	RenderingServer.viewport_set_clear_mode(get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_CLEAR_NEVER)	
 	
@@ -32,6 +34,7 @@ func _on_button_pressed():
 	var image = capture.get_image()
 	var final_image = image.get_region(Rect2i(0, 0, 64, 64))
 	final_image.save_png("res://sample_image.png")
+	Events.creature_created.emit()
 	var culled: Image = Image.load_from_file("res://sample_image.png")
 	var sprite = make_image_transparent_and_spritize("res://sample_image.png")
 	print("done...")
@@ -72,7 +75,7 @@ func make_image_transparent_and_spritize(path):
 			#if rgb (0, 0, 0 == black), then we set opacity to 0
 			curr.a = curr.r
 			image.set_pixel(i, j, curr)
-	image.save_png("res://transparent.png")
+	image.save_png("res://creature" + str(Events.creature_count) + ".png")
 	var texture = ImageTexture.create_from_image(image)
 	
 	var sprite = Sprite2D.new()
@@ -83,3 +86,9 @@ func _process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	if Input.is_action_pressed("left_click") and area_rect.has_point(mouse_pos):
 		queue_redraw()
+
+
+func _on_hub_button_button_up():
+	Events.scene_change_requested.emit("res://Scenes/Hub.tscn")
+	RenderingServer.viewport_set_clear_mode(get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_CLEAR_ALWAYS)
+	get_window().content_scale_size = Vector2i(1920, 1200)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4utqxow0an5c"]
+[gd_scene load_steps=12 format=3 uid="uid://c4utqxow0an5c"]
 
 [ext_resource type="Script" path="res://Editor/draw.gd" id="1_pn1jy"]
 [ext_resource type="Texture2D" uid="uid://wd2352w3db72" path="res://Editor/pixil-frame-043.png" id="2_m5b44"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d3y34b5v27vii" path="res://Editor/wlnydhtk.bmp" id="4_wi5w6"]
 [ext_resource type="Texture2D" uid="uid://csjb73m2bg0sx" path="res://Editor/w6b4e24a.bmp" id="6_86ko6"]
 [ext_resource type="Texture2D" uid="uid://cnuekxl41nlbm" path="res://Editor/xb3lnhng.bmp" id="7_vdv37"]
+[ext_resource type="Texture2D" uid="uid://daqg70rv0nfaw" path="res://Editor/pixil-frame-059.png" id="8_ufw7c"]
+[ext_resource type="Script" path="res://Scenes/level_select_handler.gd" id="9_blewi"]
 
 [sub_resource type="TileSet" id="TileSet_yq80h"]
 tile_size = Vector2i(1, 1)
@@ -85,6 +87,14 @@ offset_bottom = 62.0
 keep_pressed_outside = true
 texture_normal = ExtResource("6_86ko6")
 
+[node name="hub_button" type="TextureButton" parent="."]
+offset_left = 67.0
+offset_top = 29.0
+offset_right = 77.0
+offset_bottom = 39.0
+keep_pressed_outside = true
+texture_normal = ExtResource("8_ufw7c")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 65.0
 offset_right = 97.0
@@ -92,5 +102,9 @@ offset_bottom = 25.0
 texture = ExtResource("7_vdv37")
 stretch_mode = 4
 
+[node name="Node" type="Node" parent="."]
+script = ExtResource("9_blewi")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="button_up" from="hub_button" to="." method="_on_hub_button_button_up"]

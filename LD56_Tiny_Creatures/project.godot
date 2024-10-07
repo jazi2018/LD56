@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="LD56_Tiny_Creatures"
-run/main_scene="res://Scenes/Level1.tscn"
+run/main_scene="res://Scenes/Hub.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[display]window/size/viewport_width"=1920
+window/size/viewport_height=1080
 
 [autoload]
 
 Events="*res://Global Autoloads/Events.gd"
+TransitionScreen="*res://Scenes/TransitionScreen.tscn"
 
 [display]
 
