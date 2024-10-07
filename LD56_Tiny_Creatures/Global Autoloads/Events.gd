@@ -15,10 +15,15 @@ signal level_completed
 var current_creatures : int #current creatures in bucket
 signal creatures_shipped(num: int)
 
+#creature design
+var creature_count := 0
+signal creature_created
+
 func _ready() -> void:
 	creatures_shipped.connect(_store_num_creatures)
 	hub_entered.connect(_on_hub_entered)
 	hub_exited.connect(_on_hub_exited)
+	creature_created.connect(_on_creature_created)
 	current_creatures = 0
 	hub_active = true
 
@@ -33,3 +38,6 @@ func _on_hub_entered() -> void:
 
 func _on_hub_exited() -> void:
 	hub_active = false
+
+func _on_creature_created() -> void:
+	creature_count += 1

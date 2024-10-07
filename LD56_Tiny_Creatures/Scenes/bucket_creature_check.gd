@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var scene_path : String = "res://Scenes/Hub.tscn"
 @onready var timer := $Timer
 var required_creatures : int
 var creature_count := 0
@@ -21,16 +22,12 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	Events.level_completed.emit()
-	Events.scene_change_requested.emit("res://Scenes/Hub.tscn")
+	Events.scene_change_requested.emit(scene_path)
 
 
-func _on_body_entered(body):
-	print("Creature count before: ", creature_count)
+func _on_body_entered(_body):
 	creature_count += 1
-	print("Creature count after: ", creature_count)
 
 
-func _on_body_exited(body):
-	print("Creature count before: ", creature_count)
+func _on_body_exited(_body):
 	creature_count -= 1
-	print("Creature count after: ", creature_count)
