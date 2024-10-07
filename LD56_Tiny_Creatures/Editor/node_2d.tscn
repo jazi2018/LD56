@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfm3luiebf01x"]
+[gd_scene load_steps=10 format=3 uid="uid://c4utqxow0an5c"]
 
-[ext_resource type="Script" path="res://draw.gd" id="1_pn1jy"]
-[ext_resource type="Texture2D" uid="uid://wd2352w3db72" path="res://pixil-frame-043.png" id="2_m5b44"]
-[ext_resource type="Texture2D" uid="uid://cbdxcjfop64m0" path="res://l1kpfxyu.bmp" id="3_cx1s5"]
-[ext_resource type="Texture2D" uid="uid://djmbal6wdb4id" path="res://vk4263n1.bmp" id="4_ncr0o"]
-[ext_resource type="Texture2D" uid="uid://d3y34b5v27vii" path="res://wlnydhtk.bmp" id="4_wi5w6"]
-[ext_resource type="Texture2D" uid="uid://csjb73m2bg0sx" path="res://w6b4e24a.bmp" id="6_86ko6"]
-[ext_resource type="Texture2D" uid="uid://cnuekxl41nlbm" path="res://xb3lnhng.bmp" id="7_vdv37"]
+[ext_resource type="Script" path="res://Editor/draw.gd" id="1_pn1jy"]
+[ext_resource type="Texture2D" uid="uid://wd2352w3db72" path="res://Editor/pixil-frame-043.png" id="2_m5b44"]
+[ext_resource type="Texture2D" uid="uid://cbdxcjfop64m0" path="res://Editor/l1kpfxyu.bmp" id="3_cx1s5"]
+[ext_resource type="Texture2D" uid="uid://djmbal6wdb4id" path="res://Editor/vk4263n1.bmp" id="4_ncr0o"]
+[ext_resource type="Texture2D" uid="uid://d3y34b5v27vii" path="res://Editor/wlnydhtk.bmp" id="4_wi5w6"]
+[ext_resource type="Texture2D" uid="uid://csjb73m2bg0sx" path="res://Editor/w6b4e24a.bmp" id="6_86ko6"]
+[ext_resource type="Texture2D" uid="uid://cnuekxl41nlbm" path="res://Editor/xb3lnhng.bmp" id="7_vdv37"]
 
 [sub_resource type="TileSet" id="TileSet_yq80h"]
 tile_size = Vector2i(1, 1)
