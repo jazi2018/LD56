@@ -6,8 +6,8 @@ var creature_count := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# vvv for testing if level is main scene
-	#Events.creatures_shipped.emit(1)
+	# vvv for testing if level isnt hub scene
+	Events.creatures_shipped.emit(1)
 	required_creatures = Events.current_creatures
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbcvv8cm2m7ls"]
+[gd_scene load_steps=11 format=3 uid="uid://bbcvv8cm2m7ls"]
 
-[ext_resource type="Texture2D" uid="uid://brsk1blfqyb7h" path="res://Textures/glass_edge_final.png" id="1_kpvav"]
+[ext_resource type="Texture2D" uid="uid://d4c8urgmjbyed" path="res://Textures/glass_edge_final.png" id="1_kpvav"]
 [ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_u42sf"]
-[ext_resource type="Texture2D" uid="uid://cn7m6dcfegf06" path="res://Textures/glass_corner.png" id="2_pjece"]
+[ext_resource type="Texture2D" uid="uid://bdjjclfnlahva" path="res://Textures/glass_corner.png" id="2_pjece"]
 [ext_resource type="PackedScene" uid="uid://dq8dxb2y7dhyq" path="res://Scenes/Bucket.tscn" id="3_yim4f"]
+[ext_resource type="Script" path="res://Scenes/roof_animation.gd" id="4_75tg3"]
 [ext_resource type="Script" path="res://Scenes/level_select_handler.gd" id="5_jmsst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0svl"]
@@ -90,6 +91,7 @@ shape = SubResource("RectangleShape2D_kwaqg")
 
 [node name="Roof2" type="StaticBody2D" parent="."]
 position = Vector2(268, 67)
+script = ExtResource("4_75tg3")
 
 [node name="Roof" type="Sprite2D" parent="Roof2"]
 texture_repeat = 2

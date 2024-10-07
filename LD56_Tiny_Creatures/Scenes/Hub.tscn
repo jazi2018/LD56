@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bn360dxigklck" path="res://Textures/left_grass_dirt_transition.png" id="7_q65tf"]
 [ext_resource type="Texture2D" uid="uid://cf42k4d18f32k" path="res://Textures/skinny_ladder.png" id="8_g8yc5"]
 [ext_resource type="Texture2D" uid="uid://c7uh2rqo1yxar" path="res://Textures/left_grass.png" id="8_m4cr2"]
-[ext_resource type="Theme" path="res://Scenes/ButtonTheme.tres" id="8_rmb0f"]
+[ext_resource type="Theme" uid="uid://burq0wxpoqui0" path="res://Scenes/ButtonTheme.tres" id="8_rmb0f"]
 [ext_resource type="Texture2D" uid="uid://chkk7urtycyqr" path="res://Textures/right_grass.png" id="8_t2w01"]
 [ext_resource type="Texture2D" uid="uid://pohmpnf76ho3" path="res://Textures/ladder_platform_behind.png" id="9_0l1ar"]
 [ext_resource type="Texture2D" uid="uid://cmoqe4frq3gke" path="res://Textures/grass.png" id="9_86kjl"]
