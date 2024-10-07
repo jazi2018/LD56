@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq8dxb2y7dhyq"]
+[gd_scene load_steps=9 format=3 uid="uid://dq8dxb2y7dhyq"]
 
 [ext_resource type="Texture2D" uid="uid://c52si4wunscsd" path="res://Textures/bucket_chain_link.png" id="1_dcenl"]
 [ext_resource type="Texture2D" uid="uid://cyvxcio7gjymf" path="res://Textures/bucket_side.png" id="2_fon72"]
 [ext_resource type="Texture2D" uid="uid://cc33md61bjknv" path="res://Textures/bucket_net_top.png" id="3_kqtim"]
 [ext_resource type="Texture2D" uid="uid://dgrlfbfq60aw0" path="res://Textures/bucket_bottom.png" id="4_uaen8"]
+[ext_resource type="Script" path="res://Scenes/bucket_creature_check.gd" id="5_3d5xd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqcqx"]
 size = Vector2(6, 190)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hor"]
 size = Vector2(128, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khok0"]
+size = Vector2(128, 138)
 
 [node name="Bucket" type="AnimatableBody2D"]
 
@@ -83,3 +87,20 @@ texture = ExtResource("4_uaen8")
 [node name="BucketBottom2" type="Sprite2D" parent="."]
 position = Vector2(32, 102)
 texture = ExtResource("4_uaen8")
+
+[node name="CreatureCheck" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_3d5xd")
+
+[node name="CreatureCheckArea" type="CollisionShape2D" parent="CreatureCheck"]
+position = Vector2(0, 59)
+shape = SubResource("RectangleShape2D_khok0")
+
+[node name="Timer" type="Timer" parent="CreatureCheck"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="CreatureCheck" to="CreatureCheck" method="_on_body_entered"]
+[connection signal="body_exited" from="CreatureCheck" to="CreatureCheck" method="_on_body_exited"]
+[connection signal="timeout" from="CreatureCheck/Timer" to="CreatureCheck" method="_on_timer_timeout"]

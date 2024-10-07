@@ -471,8 +471,7 @@ position = Vector2(-84, 424.75)
 shape = SubResource("RectangleShape2D_o4ap5")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_8lchl")]
-position = Vector2(347, 543)
-lock_rotation = true
+position = Vector2(590, 423)
 
 [node name="Water Dripper" type="StaticBody2D" parent="."]
 position = Vector2(127, 354)

@@ -46,3 +46,4 @@ left_click={
 
 2d_physics/layer_1="mouse"
 2d_physics/layer_2="creatures"
+2d_physics/layer_3="area_detectors"
