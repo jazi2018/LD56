@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://bbcvv8cm2m7ls"]
+
+[ext_resource type="Texture2D" uid="uid://d4c8urgmjbyed" path="res://Textures/glass_edge_final.png" id="1_kpvav"]
+[ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_u42sf"]
+[ext_resource type="Texture2D" uid="uid://bdjjclfnlahva" path="res://Textures/glass_corner.png" id="2_pjece"]
+[ext_resource type="PackedScene" uid="uid://dq8dxb2y7dhyq" path="res://Scenes/Bucket.tscn" id="3_yim4f"]
+[ext_resource type="Script" path="res://Scenes/roof_animation.gd" id="4_75tg3"]
+[ext_resource type="Script" path="res://Scenes/level_select_handler.gd" id="5_jmsst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0svl"]
+size = Vector2(228, 1833)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh313"]
+size = Vector2(210, 961)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwaqg"]
+size = Vector2(231, 959)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hse8f"]
+size = Vector2(1835, 253)
+
+[node name="Level1" type="Node"]
+
+[node name="Critter" parent="." instance=ExtResource("1_u42sf")]
+position = Vector2(567, 690)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(851, 500)
+rotation = 1.5708
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+texture_repeat = 2
+position = Vector2(513, -842.699)
+texture = ExtResource("1_kpvav")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -952.5, 33, 1394.74)
+
+[node name="Corner" type="Sprite2D" parent="Floor"]
+position = Vector2(514.002, 550.998)
+texture = ExtResource("2_pjece")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(632, -136.502)
+shape = SubResource("RectangleShape2D_u0svl")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1683, 117)
+
+[node name="Wall" type="Sprite2D" parent="RightWall"]
+texture_repeat = 2
+position = Vector2(9, -34)
+texture = ExtResource("1_kpvav")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -143, 33, 934.237)
+metadata/_edit_group_ = true
+
+[node name="Corner" type="Sprite2D" parent="RightWall"]
+position = Vector2(10, 898)
+texture = ExtResource("2_pjece")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(116, 446.5)
+shape = SubResource("RectangleShape2D_oh313")
+metadata/_edit_group_ = true
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(268, 82)
+
+[node name="Wall" type="Sprite2D" parent="LeftWall"]
+texture_repeat = 2
+texture = ExtResource("1_kpvav")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -143, 33, 936.396)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-82.5, 479.5)
+shape = SubResource("RectangleShape2D_kwaqg")
+
+[node name="Roof2" type="StaticBody2D" parent="."]
+position = Vector2(268, 67)
+script = ExtResource("4_75tg3")
+
+[node name="Roof" type="Sprite2D" parent="Roof2"]
+texture_repeat = 2
+position = Vector2(1426, -17)
+rotation = 1.5708
+texture = ExtResource("1_kpvav")
+centered = false
+region_enabled = true
+region_rect = Rect2(31, -952.5, 33, 1394.74)
+
+[node name="TLCorner" type="Sprite2D" parent="Roof2"]
+position = Vector2(34, 16)
+rotation = -3.14159
+texture = ExtResource("2_pjece")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+
+[node name="TRCorner" type="Sprite2D" parent="Roof2"]
+position = Vector2(1459, -18)
+rotation = 1.5708
+texture = ExtResource("2_pjece")
+centered = false
+flip_v = true
+region_enabled = true
+region_rect = Rect2(30, 0, 34, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof2"]
+position = Vector2(716.5, -110.5)
+shape = SubResource("RectangleShape2D_hse8f")
+
+[node name="Bucket" parent="." instance=ExtResource("3_yim4f")]
+position = Vector2(1423, 351)
+
+[node name="LevelSelectManager" type="Node" parent="."]
+script = ExtResource("5_jmsst")

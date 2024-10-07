@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://df1vfpf4d8vq7"]
+
+[ext_resource type="Texture2D" uid="uid://dbcqdaj3mty8q" path="res://Textures/TEMP_PLACEHOLDER_BCKGRND.jpg" id="1_3d85s"]
+[ext_resource type="Script" path="res://Scenes/level_select_handler.gd" id="1_ho0bs"]
+[ext_resource type="Theme" uid="uid://burq0wxpoqui0" path="res://Scenes/ButtonTheme.tres" id="2_37vpf"]
+[ext_resource type="Script" path="res://Scenes/level_select_button.gd" id="3_o8agu"]
+[ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="5_5p6q0"]
+
+[node name="LevelSelect" type="Node"]
+script = ExtResource("1_ho0bs")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_3d85s")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 700)
+
+[node name="LevelSelectControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hub" type="Button" parent="LevelSelectControl"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 396.0
+offset_right = 608.0
+offset_bottom = 437.0
+theme = ExtResource("2_37vpf")
+text = "Hub"
+script = ExtResource("3_o8agu")
+level_path = "res://Scenes/Hub.tscn"
+
+[node name="LevelSelectLabel" type="RichTextLabel" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 142.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("5_5p6q0")
+theme_override_fonts/italics_font = ExtResource("5_5p6q0")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[center][wave amp=75 freq=4]level select[/wave][/center]"
+fit_content = true

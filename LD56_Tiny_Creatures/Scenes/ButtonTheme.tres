@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://burq0wxpoqui0"]
+
+[ext_resource type="FontFile" uid="uid://6qy86rd0lfds" path="res://Fonts/Daydream.ttf" id="1_ofm4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua4tv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyqdi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vbgf"]
+
+[resource]
+default_font_size = 30
+Button/colors/font_hover_color = Color(0.43287, 0.935739, 0.967023, 1)
+Button/colors/font_pressed_color = Color(0.122071, 0.634953, 0.663419, 1)
+Button/fonts/font = ExtResource("1_ofm4p")
+Button/styles/hover = SubResource("StyleBoxEmpty_ua4tv")
+Button/styles/normal = SubResource("StyleBoxEmpty_fyqdi")
+Button/styles/pressed = SubResource("StyleBoxEmpty_6vbgf")
