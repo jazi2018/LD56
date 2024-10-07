@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3mv2j21h4y4p"]
+
+[ext_resource type="PackedScene" uid="uid://bu3fc5k16xb1n" path="res://Scenes/Creature.tscn" id="1_csm3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii050"]
+size = Vector2(20, 258.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klh28"]
+size = Vector2(1181, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yp4kb"]
+size = Vector2(70.042, 17.6501)
+
+[node name="Level1" type="Node2D"]
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(874, 116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(612, 198)
+shape = SubResource("RectangleShape2D_ii050")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(315, 116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(0, 203.5)
+shape = SubResource("RectangleShape2D_ii050")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(315, 522)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(586, -69)
+shape = SubResource("RectangleShape2D_klh28")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_csm3o")]
+position = Vector2(400, 368)
+lock_rotation = true
+
+[node name="Seesaw" type="StaticBody2D" parent="."]
+position = Vector2(1111, 390)
+rotation = -0.253073
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seesaw"]
+position = Vector2(12.1685, -35.0703)
+rotation = -1.07861
+shape = SubResource("RectangleShape2D_ii050")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Seesaw"]
+position = Vector2(-0.75116, 2.90448)
+rotation = -1.07861
+node_a = NodePath("..")
+node_b = NodePath("../../Seesaw2")
+bias = 0.462
+angular_limit_lower = 1.30027
+angular_limit_upper = -0.825541
+
+[node name="Seesaw2" type="StaticBody2D" parent="."]
+position = Vector2(1105, 419)
+rotation = -0.506145
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seesaw2"]
+position = Vector2(4.0564, 1.07605)
+rotation = -1.07861
+shape = SubResource("RectangleShape2D_yp4kb")
