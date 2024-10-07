@@ -33,6 +33,17 @@ text = "Hub"
 script = ExtResource("3_o8agu")
 level_path = "res://Scenes/Hub.tscn"
 
+[node name="Editor" type="Button" parent="LevelSelectControl"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 396.0
+offset_right = 1242.0
+offset_bottom = 437.0
+theme = ExtResource("2_37vpf")
+text = "Creature Editor"
+script = ExtResource("3_o8agu")
+level_path = "res://Editor/node_2d.tscn"
+
 [node name="LevelSelectLabel" type="RichTextLabel" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
