@@ -7,4 +7,6 @@ func _ready() -> void:
 
 
 func _on_scene_change_requested(scene_path: String) -> void:
+	TransitionScreen.transition()
+	await TransitionScreen.scene_transition_finished
 	get_tree().change_scene_to_file(scene_path)

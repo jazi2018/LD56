@@ -12,4 +12,6 @@ func _on_scene_change_requested(_scene_path: String):
 	#get_tree().change_scene_to_file(scene_path)
 	
 	#this code is temporary until needs to be replaced later
+	TransitionScreen.transition()
+	await TransitionScreen.scene_transition_finished
 	get_tree().change_scene_to_file(level_select)

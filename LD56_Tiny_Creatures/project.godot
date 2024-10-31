@@ -20,15 +20,15 @@ window/size/viewport_height=1080
 [autoload]
 
 Events="*res://Global Autoloads/Events.gd"
-
-[autoload]
-
-Events="*res://Global Autoloads/Events.gd"
+TransitionScreen="*res://Scenes/TransitionScreen.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1200
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
